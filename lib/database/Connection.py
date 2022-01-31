@@ -58,5 +58,6 @@ class Connection:
 		if self._got_connection:
 			cursor = self._connection.cursor()
 			return cursor
+
 		
 
