@@ -1,7 +1,6 @@
 from lib.database.Connection import Connection
-from lib.database.entities.Sells import *
+from lib.database.entities.Prices import *
 
-con = Sells()
-con.add_sell("test", 1, 10)
-print([str(x) for x in con.get_sells()])
+con = Prices()
+print([str(x) for x in con.get_prices()])
 
