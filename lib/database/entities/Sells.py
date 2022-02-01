@@ -16,11 +16,7 @@ class SellLog:
 	def __init__(self, data):
 		"""
 		"""
-		self.__cd     = data[0]
-		self.item     = data[1]
-		self.qt_itens = data[2]
-		self.currency = data[3]
-		self.dt       = data[4]
+		self.__cd, self.item, self.qt_itens, self.currency, self.dt = data
 	
 	def get_currency_item(self) -> float:
 		"""

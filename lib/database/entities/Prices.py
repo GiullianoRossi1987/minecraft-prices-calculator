@@ -13,8 +13,7 @@ class Price:
 	def __init__(self, data):
 		"""
 		"""
-		self.item = data[0]
-		self.price = data[1]
+		self.item, self.price = data
 	
 	def __str__(self) -> str:
 		"""
@@ -24,7 +23,7 @@ class Price:
 	def __tuple__(self) -> tuple:
 		"""
 		"""
-		return (self.item, self.price)
+		return self.item, self.price
 	
 
 class Prices(Connection):
