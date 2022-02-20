@@ -25,7 +25,7 @@ SECRET_KEY = 'j+qzc26o^1z7yw^gv_@u%&g+c)f80=zk=gaul#-fab1ca8yq_c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -75,8 +75,11 @@ WSGI_APPLICATION = 'calculator_minecraft.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'minecraft_calculator',
+        'USER': 'mpc_acc',
+        "PASSWORD": 'mpc_acc',
+		'HOST': 'localhost'
     }
 }
 
