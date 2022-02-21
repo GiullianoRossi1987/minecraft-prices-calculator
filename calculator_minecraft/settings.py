@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dinamic_prices',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,8 @@ DATABASES = {
         'NAME': 'minecraft_calculator',
         'USER': 'mpc_acc',
         "PASSWORD": 'mpc_acc',
-		'HOST': 'localhost'
+		'HOST': 'localhost',
+		'DISABLE_SERVER_SIDE_CURSORS': True
     }
 }
 
