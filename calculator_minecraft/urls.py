@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import dinamic_prices.views as dpv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("dynamic/", dpv.index, name="Dynamic Prices table")
 ]

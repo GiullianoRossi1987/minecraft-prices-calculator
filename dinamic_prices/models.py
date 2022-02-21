@@ -61,4 +61,20 @@ class Sell(models.Model):
 			sum_value += qs["value"] / qs["qtd"]
 			c += 1
 		return sum_value / c
+	
+#	@staticmethod
+#	def all_dict() -> list:
+#		"""
+#		Converts all the items to a list of dictionaries
+#		"""
+#		items = Sell.objects.all()
+#		ls = []
+#		for item in items:
+#			ls.append({
+#				"cd": item.cd,
+#				"item": item.item,
+#				"qtd": item.qtd,
+#				"value": item.value,
+#				"datetime_sell": item.datetime_sell
+#			})
 

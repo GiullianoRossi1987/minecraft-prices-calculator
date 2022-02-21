@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dynamic Prices</title>
+	</head>
+	<body>
+		{% block indev  %}
+		{% for sell_log in sells %}
+		<h1>{{sell_log.item}}</h1>
+		{% endfor %}
+		{% endblock %}
+	</body>
+</html>
