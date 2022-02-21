@@ -44,9 +44,21 @@ class Sell(models.Model):
 		)
 		return result.all()[0]["icount"]
 
-
-	def get_avg_dynamic_price(self, item: str):
+	@staticmethod
+	def get_avg_dynamic_price(item_search: str) -> Decimal:
 		"""
-		
+		Selects all the occourences of an item in the database and gets the average of the 
+		sum of your values
 		"""
+		pool = (Sell.objects
+			.values("item", "value", "qtd")
+			# .annotate(icount=models.Count("item"))
+			.filter(item=item_search)
+		)
+		sum_value = 0
+		c = 0
+		for qs in pool.all(): 
+			sum_value += qs["value"] / qs["qtd"]
+			c += 1
+		return sum_value / c
 

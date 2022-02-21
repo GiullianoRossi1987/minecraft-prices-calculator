@@ -30,6 +30,14 @@ class DynamicPricesTest(TestCase):
 		"""
 		self.assertEqual(Sell.item_exists("oak_log"), True)
 	
+	def test_avg(self):
+		"""
+		Checks if the get_avg_dynamic_price is working well
+		using the data from the setup
+		"""
+		self.assertEqual(Sell.get_avg_dynamic_price("oak_log"), 10)
+
+	
 	
 	
 	
