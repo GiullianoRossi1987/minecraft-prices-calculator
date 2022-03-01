@@ -25,7 +25,7 @@ SECRET_KEY = 'j+qzc26o^1z7yw^gv_@u%&g+c)f80=zk=gaul#-fab1ca8yq_c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'dinamic_prices',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'calculator_minecraft.urls'
@@ -80,7 +83,7 @@ DATABASES = {
         'NAME': 'minecraft_calculator',
         'USER': 'mpc_acc',
         "PASSWORD": 'mpc_acc',
-		'HOST': 'localhost',
+		'HOST': '192.168.5.222',
 		'DISABLE_SERVER_SIDE_CURSORS': True
     }
 }
@@ -123,3 +126,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+	'localhost',
+	'192.168.5.222'
+]
+
